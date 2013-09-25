@@ -33,7 +33,7 @@ public class MainActivity extends Activity {
     SeekBar mNoSeekBar;
 
     @AfterViews
-    void initKinmozaWebView() {
+    void initAliceWebView() {
         Point point = WindowUtils.getSize(this);
         Template template = new AliceTemplate(this, point.x, point.y);
 
