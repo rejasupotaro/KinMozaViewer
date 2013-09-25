@@ -4,6 +4,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.util.DisplayMetrics;
 import android.view.Display;
+import android.view.MotionEvent;
 import android.view.View;
 import android.view.WindowManager;
 import android.webkit.WebSettings;
@@ -44,6 +45,14 @@ public class MainActivity extends Activity {
     void initKinmozaWebView() {
         Point point = WindowUtils.getSize(this);
         mAliceTemplate = new AliceTemplate(this, point.x, point.y);
+
+        mKinmozaWebView.setOnTouchListener(new View.OnTouchListener() {
+            @Override
+            public boolean onTouch(View v, MotionEvent event) {
+                return event.getAction() == MotionEvent.ACTION_MOVE;
+            }
+        });
+
         loadAlice();
     }
 
