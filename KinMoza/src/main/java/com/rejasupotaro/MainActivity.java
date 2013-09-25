@@ -9,6 +9,8 @@ import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.OptionsMenu;
 import com.googlecode.androidannotations.annotations.ViewById;
+import com.rejasupotaro.constants.Param;
+import com.rejasupotaro.constants.Url;
 
 import org.apache.http.NameValuePair;
 import org.apache.http.client.utils.URLEncodedUtils;
@@ -33,7 +35,7 @@ public class MainActivity extends Activity {
     }
 
     private void loadAlice() {
-        loadAlice(-1, -1);
+        loadAlice(Param.UNDEFINED, Param.UNDEFINED);
     }
 
     private void loadAlice(int ep, int no) {
@@ -51,6 +53,6 @@ public class MainActivity extends Activity {
 
         String paramString = URLEncodedUtils.format(params, HTTP.UTF_8);
 
-        return "http://mogashi.no-ip.org/alice/" + paramString;
+        return Url.ALICE + paramString;
     }
 }
