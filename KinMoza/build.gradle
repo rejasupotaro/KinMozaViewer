@@ -1,0 +1,51 @@
+buildscript {
+    repositories {
+        mavenCentral()
+    }
+    dependencies {
+        classpath 'com.android.tools.build:gradle:0.5.+'
+    }
+}
+apply plugin: 'android'
+
+repositories {
+    mavenCentral()
+}
+
+android {
+    compileSdkVersion 18
+    buildToolsVersion "17.0.0"
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 16
+    }
+}
+
+configurations {
+    apt
+}
+
+dependencies {
+    apt "com.googlecode.androidannotations:androidannotations:2.7.1"
+    compile "com.googlecode.androidannotations:androidannotations-api:2.7.1"
+}
+
+android.applicationVariants.all { variant ->
+    def aptOutput = file("${project.buildDir}/source/r/${variant.dirName}")
+
+    variant.javaCompile.doFirst {
+        aptOutput.mkdirs()
+        aptOutput.eachFileRecurse groovy.io.FileType.FILES, {
+            if (it.name.equals('R.java')) {
+                return
+            }
+            it.delete()
+        }
+        variant.javaCompile.options.compilerArgs += [
+                '-processorpath', configurations.apt.getAsPath(),
+                '-AandroidManifestFile=' + variant.processResources.manifestFile,
+                '-s', aptOutput
+        ]
+    }
+}
