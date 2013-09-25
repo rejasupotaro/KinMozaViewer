@@ -17,6 +17,10 @@ public class AliceWebView extends WebView {
 
     public AliceWebView(Context context, AttributeSet attrs) {
         super(context, attrs);
+        initWebView();
+    }
+
+    private void initWebView() {
         getSettings().setCacheMode(WebSettings.LOAD_CACHE_ELSE_NETWORK);
     }
 
