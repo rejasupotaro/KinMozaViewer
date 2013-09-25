@@ -13,7 +13,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.io.InputStreamReader;
 
-public class AliceTemplate {
+public class AliceTemplate implements Template {
 
     private static final String TAG = AliceTemplate.class.getSimpleName();
 

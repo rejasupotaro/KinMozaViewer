@@ -4,7 +4,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <WebView
+    <com.rejasupotaro.views.AliceWebView
         android:id="@+id/webview_kinmoza"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
