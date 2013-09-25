@@ -1,4 +1,4 @@
-package com.rejasupotaro;
+package com.rejasupotaro.activities;
 
 import android.app.Activity;
 import android.webkit.WebView;
@@ -8,6 +8,7 @@ import com.googlecode.androidannotations.annotations.EActivity;
 import com.googlecode.androidannotations.annotations.NoTitle;
 import com.googlecode.androidannotations.annotations.OptionsMenu;
 import com.googlecode.androidannotations.annotations.ViewById;
+import com.rejasupotaro.R;
 import com.rejasupotaro.constants.Param;
 import com.rejasupotaro.utils.UrlUtils;
 
