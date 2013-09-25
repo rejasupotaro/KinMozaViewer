@@ -1,6 +1,12 @@
 package com.rejasupotaro.activities;
 
 import android.app.Activity;
+import android.graphics.Point;
+import android.util.DisplayMetrics;
+import android.view.Display;
+import android.view.View;
+import android.view.WindowManager;
+import android.webkit.WebSettings;
 import android.webkit.WebView;
 import android.widget.SeekBar;
 
@@ -12,7 +18,11 @@ import com.googlecode.androidannotations.annotations.ViewById;
 import com.rejasupotaro.R;
 import com.rejasupotaro.constants.Param;
 import com.rejasupotaro.listeners.AliceSeekBarChangeListener;
+import com.rejasupotaro.templates.AliceTemplate;
 import com.rejasupotaro.utils.UrlUtils;
+import com.rejasupotaro.utils.WindowUtils;
+
+import org.apache.http.protocol.HTTP;
 
 @EActivity(R.layout.activity_main)
 @NoTitle
@@ -28,10 +38,13 @@ public class MainActivity extends Activity {
     @ViewById(R.id.seekbar_no)
     SeekBar mNoSeekBar;
 
+    private AliceTemplate mAliceTemplate;
+
     @AfterViews
     void initKinmozaWebView() {
+        Point point = WindowUtils.getSize(this);
+        mAliceTemplate = new AliceTemplate(this, point.x, point.y);
         loadAlice();
-        mKinmozaWebView.zoomIn();
     }
 
     @AfterViews
@@ -56,6 +69,8 @@ public class MainActivity extends Activity {
     }
 
     private void loadAlice(int ep, int no) {
-        mKinmozaWebView.loadUrl(UrlUtils.buildAliceUrl(ep, no));
+        String imageUrl = UrlUtils.buildAliceUrl(ep, no);
+        String content = mAliceTemplate.compile(imageUrl);
+        mKinmozaWebView.loadDataWithBaseURL("", content, "text/html", HTTP.UTF_8, null);
     }
 }
