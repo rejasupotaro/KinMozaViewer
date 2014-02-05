@@ -18,12 +18,7 @@
         android:orientation="vertical">
 
         <SeekBar
-            android:id="@+id/seekbar_ep"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
-
-        <SeekBar
-            android:id="@+id/seekbar_no"
+            android:id="@+id/seekbar"
             android:layout_marginTop="8dp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content" />

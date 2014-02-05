@@ -26,11 +26,8 @@ public class MainActivity extends Activity {
     @ViewById(R.id.webview_kinmoza)
     AliceWebView mAliceWebView;
 
-    @ViewById(R.id.seekbar_ep)
-    SeekBar mEpSeekBar;
-
-    @ViewById(R.id.seekbar_no)
-    SeekBar mNoSeekBar;
+    @ViewById(R.id.seekbar)
+    SeekBar mSeekBar;
 
     @AfterViews
     void initAliceWebView() {
@@ -50,10 +47,9 @@ public class MainActivity extends Activity {
     @AfterViews
     void initSeekBars() {
         AliceSeekBarChangeListener onSeekBarChangeListener =
-                new AliceSeekBarChangeListener(mEpSeekBar, mNoSeekBar, mSeekBarEventListener);
+                new AliceSeekBarChangeListener(mSeekBar, mSeekBarEventListener);
 
-        mEpSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
-        mNoSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
+        mSeekBar.setOnSeekBarChangeListener(onSeekBarChangeListener);
     }
 
     private AliceSeekBarChangeListener.Event mSeekBarEventListener =
