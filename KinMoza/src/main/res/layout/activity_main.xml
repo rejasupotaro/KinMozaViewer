@@ -1,26 +1,28 @@
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".MainActivity">
-
+<FrameLayout
+        xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity"
+        >
     <com.rejasupotaro.views.AliceWebView
-        android:id="@+id/webview_kinmoza"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent" />
-
-    <LinearLayout
-        android:background="@color/semitransparent_black"
-        android:layout_gravity="bottom"
-        android:padding="16dp"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:orientation="vertical">
-
-        <SeekBar
-            android:id="@+id/seekbar"
-            android:layout_marginTop="8dp"
+            android:id="@+id/webview_kinmoza"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content" />
+            android:layout_height="match_parent"
+            />
+    <LinearLayout
+            android:background="@drawable/seekbar_bg"
+            android:layout_gravity="bottom"
+            android:padding="@dimen/seekbar_bg_height"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            >
+        <SeekBar
+                android:id="@+id/seekbar"
+                android:thumb="@drawable/thumb"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
     </LinearLayout>
 </FrameLayout>
