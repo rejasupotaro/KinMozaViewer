@@ -1,4 +1,4 @@
-KinMozaApp
+KinMozaApp [![Build Status](https://travis-ci.org/rejasupotaro/KinMoza.png)](https://travis-ci.org/rejasupotaro/KinMoza)
 ==========
 
 ![](https://raw2.github.com/rejasupotaro/KinMoza/master/screenshot.png)
