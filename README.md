@@ -1,7 +1,7 @@
 KinMozaApp
 ==========
 
-![](https://dl.dropboxusercontent.com/u/54255753/blog/201309/alice.png)
+![](https://raw2.github.com/rejasupotaro/KinMoza/master/screenshot.png)
 
 A refugee camp for alice lovers.
 
