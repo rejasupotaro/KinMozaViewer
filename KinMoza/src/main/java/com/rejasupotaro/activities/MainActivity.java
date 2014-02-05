@@ -41,7 +41,7 @@ public class MainActivity extends Activity {
                 return event.getAction() == MotionEvent.ACTION_MOVE;
             }
         });
-        mAliceWebView.loadAlice();
+        mAliceWebView.loadAlice(1, 1);
     }
 
     @AfterViews
