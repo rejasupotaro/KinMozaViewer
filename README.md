@@ -1,7 +1,7 @@
-KinMozaViewer [![Build Status](https://travis-ci.org/rejasupotaro/KinMoza.png)](https://travis-ci.org/rejasupotaro/KinMoza)
+KinMozaViewer [![Build Status](https://travis-ci.org/rejasupotaro/KinMozaViewer.png?branch=master)](https://travis-ci.org/rejasupotaro/KinMozaViewer)
 ==========
 
-![](https://raw2.github.com/rejasupotaro/KinMoza/master/screenshot.png)
+![](https://raw2.github.com/rejasupotaro/KinMozaViewer/master/screenshot.png)
 
 A refugee camp for alice lovers.
 
