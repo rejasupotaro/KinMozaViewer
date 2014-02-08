@@ -77,7 +77,7 @@ public class MainActivity extends Activity {
                     @Override
                     public void onCheckedChanged(CompoundButton buttonView, boolean isChecked) {
                         if (isChecked) {
-                            mTimerTask.setTimer();
+                            mTimerTask.start();
                         } else {
                             mTimerTask.stop();
                         }
