@@ -4,9 +4,9 @@ import android.widget.SeekBar;
 
 public class MediaTimerTask extends PeriodicTimerTask {
 
-    private static final int TASK_INTERVAL_MS = 100;
+    private static final int TASK_INTERVAL_MS = 500;
 
-    private static final int PROGRESS_INCREMENT = 2;
+    private static final int PROGRESS_INCREMENT = 10;
 
     public MediaTimerTask(final SeekBar seekBar) {
         super(new Runnable() {
