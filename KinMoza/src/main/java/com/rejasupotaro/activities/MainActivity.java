@@ -17,6 +17,7 @@ import android.app.Activity;
 import android.graphics.Point;
 import android.view.MotionEvent;
 import android.view.View;
+import android.view.WindowManager;
 import android.widget.CheckBox;
 import android.widget.CompoundButton;
 import android.widget.SeekBar;
@@ -26,17 +27,22 @@ import android.widget.SeekBar;
 @OptionsMenu(R.menu.main)
 public class MainActivity extends Activity {
 
+    @AfterViews
+    void initViews() {
+        keepScreenOn();
+        initAliceWebView();
+        initSeekBars();
+        initMediaControllButton();
+    }
+
+    private void keepScreenOn() {
+        getWindow().addFlags(WindowManager.LayoutParams.FLAG_KEEP_SCREEN_ON);
+    }
+
     @ViewById(R.id.webview_kinmoza)
     AliceWebView mAliceWebView;
 
-    @ViewById(R.id.seekbar)
-    SeekBar mSeekBar;
-
-    @ViewById(R.id.media_controll_button)
-    CheckBox mMediaControllButton;
-
-    @AfterViews
-    void initAliceWebView() {
+    private void initAliceWebView() {
         Point point = WindowUtils.getSize(this);
         Template template = new AliceTemplate(this, point.x, point.y);
 
@@ -50,8 +56,10 @@ public class MainActivity extends Activity {
         mAliceWebView.loadAlice(1, 1);
     }
 
-    @AfterViews
-    void initSeekBars() {
+    @ViewById(R.id.seekbar)
+    SeekBar mSeekBar;
+
+    private void initSeekBars() {
         AliceSeekBarChangeListener onSeekBarChangeListener =
                 new AliceSeekBarChangeListener(mSeekBar, mSeekBarEventListener);
 
@@ -68,8 +76,10 @@ public class MainActivity extends Activity {
 
     private MediaTimerTask mTimerTask;
 
-    @AfterViews
-    void initMediaControllButton() {
+    @ViewById(R.id.media_controll_button)
+    CheckBox mMediaControllButton;
+
+    private void initMediaControllButton() {
         mTimerTask = new MediaTimerTask(mSeekBar);
 
         mMediaControllButton
