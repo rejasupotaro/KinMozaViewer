@@ -26,7 +26,7 @@ public class AliceSeekBarChangeListener implements SeekBar.OnSeekBarChangeListen
 
     @Override
     public void onProgressChanged(SeekBar seekBar, int progress, boolean fromUser) {
-        // nothing to do
+        update(progress);
     }
 
     @Override
@@ -36,7 +36,11 @@ public class AliceSeekBarChangeListener implements SeekBar.OnSeekBarChangeListen
 
     @Override
     public void onStopTrackingTouch(SeekBar seekBar) {
-        int scene = normarizeProgress(mSeekBar.getProgress());
+        update(mSeekBar.getProgress());
+    }
+
+    private void update(int progress) {
+        int scene = normarizeProgress(progress);
         if (!isProgressChanged(scene)) return;
         mPrevScene = scene;
 
