@@ -13,14 +13,23 @@
     <LinearLayout
             android:background="@drawable/seekbar_bg"
             android:layout_gravity="bottom"
+            android:gravity="center"
             android:padding="@dimen/seekbar_bg_height"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:orientation="vertical"
+            android:orientation="horizontal"
             >
+        <CheckBox
+                android:id="@+id/media_controll_button"
+                style="@style/MediaControllButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                />
         <SeekBar
                 android:id="@+id/seekbar"
                 android:thumb="@drawable/thumb"
+                android:layout_weight="1"
+                android:layout_marginLeft="6dp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 />
